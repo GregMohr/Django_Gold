@@ -1,0 +1,44 @@
+body{
+  text-align: center;
+}
+#wrapper{
+  text-align: left;
+  font-family: sans-serif;
+  margin: 0 auto;
+  width: 522px;
+  height: 500px;
+}
+.building{
+  text-align: center;
+  vertical-align: top;
+  display: inline-block;
+  width: 125px;
+  height: 125px;
+  border: 1px solid black;
+}
+p{
+  font-size: 9pt;
+  margin: 0;
+  padding: 10px 0;
+}
+#gold h3{
+  display: inline-block;
+  vertical-align: top;
+}
+h4{
+  margin: 15px 0;
+}
+.green{
+  padding: 0;
+  margin: 0;
+  color: green;
+}
+.red{
+  padding: 0;
+  margin: 0;
+  color: red;
+}
+#scrollMe{
+  height: 300px;
+  overflow: scroll;
+}

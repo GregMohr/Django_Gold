@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ninja Gold</title>
+    {% load staticfiles %}
+      <link rel="stylesheet" href="{% static 'djangogold/css/index.css' %}">
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="gold">
+        <h3>Your Gold:</h3>
+        <h3>{{ request.session.your_gold }}</h3>
+      </div><!-- gold end -->
+      <div class="building">
+        <h4>Farm</h4>
+        <p>(earns 10-20 gold)</p>
+        <form action="process_money" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="building" value="farm">
+          <button type="submit" name="button">Find Gold!</button>
+        </form>
+      </div><!-- building end -->
+      <div class="building">
+        <h4>Cave</h4>
+        <p>(earns 5-10 gold)</p>
+        <form action="process_money" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="building" value="cave">
+          <button type="submit" name="button">Find Gold!</button>
+        </form>
+      </div><!-- building end -->
+      <div class="building">
+        <h4>House</h4>
+        <p>(earns 2-5 gold)</p>
+        <form action="process_money" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="building" value="house">
+          <button type="submit" name="button">Find Gold!</button>
+        </form>
+      </div><!-- building end -->
+      <div class="building">
+        <h4>Casino</h4>
+        <p>(earns 0-50 gold)</p>
+        <form action="process_money" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="building" value="casino">
+          <button type="submit" name="button">Find Gold!</button>
+        </form>
+      </div><!-- building end -->
+      <h3>Actvities</h3>
+      <div id="scrollMe">
+        {% for activity in request.session.activity_log %}
+        <p class="{{activity.actColor}}">{{activity.actText}}</p>
+        {% endfor %}
+      </div><!--  end -->
+    </div><!-- wrapper end -->
+  </body>
+</html>
